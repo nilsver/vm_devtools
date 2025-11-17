@@ -6,5 +6,5 @@ set -a
 source "$ENV_FILE"
 set +a
 
-SCRIPT_DIR="$(dirname "$0")/../lib"
+SCRIPT_DIR="$(dirname "$0")/../lib/vm_devtools"
 python3 "$SCRIPT_DIR/vm_power_off.py" "${1:-$VM_MAIN}"
