@@ -4,13 +4,15 @@ Release:        1%{?dist}
 Summary:        VMware ESXi dev tools
 
 License:        Proprietary
+Source0:        vm_devtools-1.0.0.tar.gz
 BuildArch:      noarch
-Requires:       python3, python3-pip, python3-dotenv, pyvmomi
+Requires:       python3, python3-pip, python3-dotenv
 
 %description
 Tools for managing VMware VMs.
 
 %prep
+%setup -q
 
 %build
 

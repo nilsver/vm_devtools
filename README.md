@@ -16,17 +16,25 @@ To build the RPM package, navigate to the root of this repository and run the `b
 
 This will create an RPM file in `~/rpmbuild/RPMS/noarch/`.
 
-### 2. Install the RPM
+### 2. Install Dependencies
+
+Before installing the RPM, you need to install the `pyvmomi` library using `pip`:
+
+```bash
+pip install pyvmomi
+```
+
+### 3. Install the RPM
 
 Once the RPM is built, you can install it using your system's package manager (e.g., `dnf` or `yum`):
 
 ```bash
-sudo dnf install ~/rpmbuild/RPMS/noarch/vm_devtools-1.0.0-1.noarch.rpm
+sudo dnf install ./rpmbuild/RPMS/noarch/vm_devtools-1.0.0-1.noarch.rpm
 # Or for older systems:
-# sudo yum install ~/rpmbuild/RPMS/noarch/vm_devtools-1.0.0-1.noarch.rpm
+# sudo yum install ./rpmbuild/RPMS/noarch/vm_devtools-1.0.0-1.noarch.rpm
 ```
 
-### 3. Configure the Tools
+### 4. Configure the Tools
 
 After installation, you need to configure your VMware ESXi credentials and main VM. Run the setup script:
 
