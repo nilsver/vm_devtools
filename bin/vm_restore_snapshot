@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+ENV_FILE="/etc/vm_devtools/.env"
+set -a
+source "$ENV_FILE"
+set +a
+
+SCRIPT_DIR="$(dirname "$0")/../lib"
+python3 "$SCRIPT_DIR/vm_restore_snapshot.py" "${1:-$VM_MAIN}"
